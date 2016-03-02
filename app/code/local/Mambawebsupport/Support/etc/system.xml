@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+* 
+* Do not edit or add to this file if you wish to upgrade the module to newer
+* versions in the future. If you wish to customize the module for your 
+* needs please contact us to http://mambaweb.weebly.com/contact.html
+* 
+* @category    Ecommerce
+* @package     Mambawebsupport_Support
+* @copyright   Copyright (c) 2016 Mambaweb
+* @url	       http://www.mambawebsupport.com/
+*
+**/
+-->
+<config>
+    <tabs>
+        <mambawebsupport_extensions translate="label">
+           <label><![CDATA[<div style="height: 20px; margin: 3px -4px; position: relative;"><img id="mambawebsupport_config" src="" alt="Mambaweb Extensions" border="0" /></div><script>var n = SKIN_URL.indexOf("adminhtml");$('mambawebsupport_config').src = SKIN_URL.substring(0, n) + "adminhtml/default/default/images/mambawebsupport/mambawebsupport_extensions.png";</script>]]></label>
+            <sort_order>150</sort_order>
+        </mambawebsupport_extensions>
+    </tabs>
+    <sections>
+        <support translate="label" module="support">
+            <label>Support and Feedback</label>
+            <tab>mambawebsupport_extensions</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>99999</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+			<groups>
+				<extensions translate="label">
+                    <label>Extension Information</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+					<frontend_model>support/system_config_form_fieldset_awall_extensions</frontend_model>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </extensions>
+				
+				<support_form translate="label">
+					<label>Support</label>
+                    <frontend_type>text</frontend_type>					
+					<frontend_model>support/system_config_form_fieldset_awall_Support</frontend_model>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+				</support_form>
+				
+				<share_your_feedback translate="label">
+					<label>Share Your Feedback</label>
+                    <frontend_type>text</frontend_type>
+					<frontend_model>support/system_config_form_fieldset_awall_ShareYourFeedback</frontend_model>
+                    <sort_order>3</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+				</share_your_feedback>
+				
+				<get_customized translate="label">
+					<label>Get Customized</label>
+                    <frontend_type>text</frontend_type>
+					<frontend_model>support/system_config_form_fieldset_awall_GetCustomized</frontend_model>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+				</get_customized>
+				
+				<get_connected translate="label">
+					<label>Get Connected</label>
+                    <frontend_type>text</frontend_type>
+					<frontend_model>support/system_config_form_fieldset_awall_GetConnected</frontend_model>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+				</get_connected>
+			</groups>
+        </support>
+    </sections>
+</config>

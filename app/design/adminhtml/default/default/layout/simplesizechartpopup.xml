@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+* 
+* Do not edit or add to this file if you wish to upgrade the module to newer
+* versions in the future. If you wish to customize the module for your 
+* needs please contact us to http://mambaweb.weebly.com/contact.html
+* 
+* @category    Ecommerce
+* @package     Mambaweb_SimpleSizechartpopup
+* @copyright   Copyright (c) 2016 Mambaweb
+* @url	       http://goworktoupwork.com/category/downloads/magento-extensions/
+*
+*
+*
+*/
+-->
+<layout version="0.1.0">
+    <default>
+  <reference name="head">
+   <action method="addJs"><script>simplesizechartpopup/jquery/module/jscolor.js</script></action>
+  </reference>
+    </default>
+</layout>

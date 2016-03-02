@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<!--
+/**
+* 
+* Do not edit or add to this file if you wish to upgrade the module to newer
+* versions in the future. If you wish to customize the module for your 
+* needs please contact us to http://mambaweb.weebly.com/contact.html
+* 
+* @category    Ecommerce
+* @package     Mambaweb_SimpleSizechartpopup
+* @copyright   Copyright (c) 2016 Mambaweb
+* @url	       http://goworktoupwork.com/category/downloads/magento-extensions/
+*
+*
+*
+*/
+-->
+<config>
+	<tabs>
+        <mambawebsupport_extensions translate="label">
+            <label>Mambaweb Services</label>
+            <sort_order>250</sort_order>
+        </mambawebsupport_extensions>
+    </tabs>
+	<sections>
+		<simplesizechartpopup translate="label" module="simplesizechartpopup">
+            <label>Simple Size Chart Popup</label>
+            <tab>mambawebsupport_extensions</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+			
+				<license_status_group translate="label" module="simplesizechartpopup">
+                    <label>License and Status</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						 <serial_key translate="label" module="simplesizechartpopup">
+                            <label>Serial Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+							<validate>required-entry</validate>
+							<backend_model>simplesizechartpopup/observer</backend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </serial_key>
+                        <status translate="label" module="simplesizechartpopup">
+                            <label>Status</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>simplesizechartpopup/status</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </status>						
+                    </fields>
+	            </license_status_group>
+				
+				<general_setting translate="label" module="simplesizechartpopup">
+                    <label>General Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>200</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<chart_link translate="label" module="simplesizechartpopup">
+                            <label>Size Chart Link On</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>simplesizechartpopup/chartlink</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </chart_link>
+						<linktitle translate="label" module="simplesizechartpopup">
+                            <label>Size Chart Link Text</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+							<depends>
+								<chart_link separator=",">1,3</chart_link>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </linktitle>
+						<scptextcolor translate="label">
+                            <label>Size Chart Link Text Color</label>
+                            <comment><![CDATA[]]></comment>
+                            <frontend_type>text</frontend_type>   
+							<validate>color</validate>							
+                            <sort_order>25</sort_order>
+							<depends>
+								<chart_link separator=",">1,3</chart_link>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </scptextcolor>  
+						<linkimage translate="label comment">
+							<label>Size Chart Link Image</label>
+							<comment>Allowed file types: jpeg, gif, png.</comment>
+							<frontend_type>image</frontend_type>
+							<backend_model>adminhtml/system_config_backend_image</backend_model>
+							<upload_dir config="system/filesystem/media" scope_info="1">simplesizechartpopup</upload_dir>
+							<base_url type="media" scope_info="1">simplesizechartpopup</base_url>
+							<depends>
+								<chart_link separator=",">2,3</chart_link>
+							</depends>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</linkimage>
+						<sizecharttype translate="label" module="simplesizechartpopup">
+                            <label>Show Size Chart Through</label>
+                           	<frontend_type>select</frontend_type>
+                            <source_model>simplesizechartpopup/type</source_model>
+							<sort_order>35</sort_order>
+							<show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sizecharttype>	
+                        <chartimage translate="label comment">
+							<label>Upload Size Chart Image</label>
+							<comment>Allowed file types: jpeg, gif, png.</comment>
+							<frontend_type>image</frontend_type>
+							<backend_model>adminhtml/system_config_backend_image</backend_model>
+							<upload_dir config="system/filesystem/media" scope_info="1">simplesizechartpopup</upload_dir>
+							<base_url type="media" scope_info="1">simplesizechartpopup</base_url>
+							<sort_order>40</sort_order>
+							<depends>
+								<sizecharttype separator=",">1</sizecharttype>
+							</depends>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</chartimage>
+						 <chartblock translate="label comment">
+							<label>Size Chart Block Identifier</label>
+							<comment>Select block you want to add in size chart link</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>45</sort_order>
+							<depends>
+								<sizecharttype separator=",">2</sizecharttype>
+							</depends>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</chartblock>
+						<effect>
+							<label>Action to Open Size Chart</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>simplesizechartpopup/effect</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</effect>
+                    </fields>
+	            </general_setting>
+			</groups>
+		</simplesizechartpopup>
+	</sections>
+</config>

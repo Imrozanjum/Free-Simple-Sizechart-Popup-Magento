@@ -1,0 +1,320 @@
+/**
+* 
+* Do not edit or add to this file if you wish to upgrade the module to newer
+* versions in the future. If you wish to customize the module for your 
+* needs please contact us to http://mambaweb.weebly.com/contact.html
+* 
+* @category    Ecommerce
+* @package     Mambaweb_SimpleSizechartpopup
+* @copyright   Copyright (c) 2016 Mambaweb
+* @url	       http://goworktoupwork.com/category/downloads/magento-extensions/
+*
+*
+*
+*/
+
+#button {
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	/*color: #996633;*/
+	color:#3399cc;
+    display: block;
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-bottom: 15px;
+    margin-top: 0;
+    padding: 5px 10px;
+    text-align: center;
+	clear:both;
+}
+
+#button:hover {
+	background-color: #eee;
+	border: 1px solid;
+}
+
+
+
+#modal {
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	visibility:hidden;	
+	height:auto !important;
+	/* position:fixed !important;  */
+	position:fixed !important; 
+	top:30% !important;
+	left: 34% !important;
+	width:60%;
+	margin-top:-100px !important;
+	margin-left:-180px !important;
+	z-index:101;
+}
+#modal img {
+   /* display: block; */
+    width: 100%;
+	height:100%;
+}
+//.modalclose{ background: none repeat scroll 0 0 #fcfcfc;}
+#heading {
+	
+font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	background-image: -webkit-linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
+	background-image: -moz-linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
+	background-image: -o-linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
+	background-image: -ms-linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
+	background-image: linear-gradient(top, rgb(249, 249, 249), rgb(233, 233, 233));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f9f9f9', EndColorStr='#e9e9e9');
+
+	border-bottom:1px solid #bababa;
+
+	-webkit-box-shadow:
+		inset 0px -1px 0px #fff,
+		0px 1px 3px rgba(0,0,0,.08);
+	-moz-box-shadow:
+		inset 0px -1px 0px #fff,
+		0px 1px 3px rgba(0,0,0,.08);
+	box-shadow:
+		inset 0px -1px 0px #fff,
+		0px 1px 3px rgba(0,0,0,.08);
+
+	-webkit-border-radius:4px 4px 0px 0px;
+	-moz-border-radius:4px 4px 0px 0px;
+	border-radius:4px 4px 0px 0px;
+
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+	line-height:44px;
+
+	color:#444444;
+	text-shadow:0px 1px 0px #fff;
+}
+
+#content {
+	position:relative !important;
+    min-width: 45%;	
+	background:#fcfcfc;	
+	-webkit-box-shadow:0px 1px 3px rgba(0,0,0,.25);
+	-moz-box-shadow:0px 1px 3px rgba(0,0,0,.25);
+	box-shadow:0px 1px 3px rgba(0,0,0,.25);	
+	-webkit-border-radius:0px 0px 4px 4px;
+	-moz-border-radius:0px 0px 4px 4px;
+	border-radius:0px 0px 4px 4px;
+	width:94%;
+	margin-top: 3%;
+	overflow:scroll !important;
+	max-height:450px;
+	border:8px solid rgba(0,0,0,.3);
+	
+}
+.modalclose {
+    position: relative;
+    z-index: inherit;
+}
+/* #content > img {
+    float: left;
+    height: auto;
+} */
+.reveal-modal-bg { 
+	position: fixed !important; 
+	height: 100%;
+	width: 100%;
+	background: #000;
+	background: rgba(0,0,0,.4);
+	z-index: 100;
+	display: none;
+	top: 0;
+	left: 0; 
+}
+
+
+#underlay{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:#000;
+	-moz-opacity:0.5;
+	opacity:.50;
+	filter:alpha(opacity=50);
+}
+#lightbox{
+	display:none;
+	position:absolute;
+	top:100px;
+	left:25%;
+	width:50%;
+	height:400px;
+	background-color:#fff;
+	z-index:99999;
+}	
+
+#container {
+	float:left;
+	width:100%;
+	font-family:Tahoma, sans-serif;
+	zoom:1;
+	border:none;
+	height:auto;
+}
+#container:before,
+#container:after {
+	content:"";
+	display:table;
+}
+#container:after {
+	clear:both;
+}
+.original-box {
+	background:none;
+    color: #1E7EC8;
+    float: left;
+    height: auto;
+    margin: 14px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: underline;
+    /* width: auto; */
+	width: 70%;
+	}
+.popup-box {
+	position:absolute;
+	top:-20px;
+	width:auto;
+	/* height:auto;overflow-y: scroll; */
+	height:300px;
+	overflow-x:none;	
+	-moz-transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+	-o-transition:all 0.4s;
+	transition:all 0.4s;
+	opacity:0;
+	filter:Alpha(opacity=0);
+    z-index: 999;
+	/* margin-top:-300px; */
+	
+	box-shadow: 0px 0px 0px 10px rgba(130,130,130,0.9); 
+	 background: none repeat scroll 0 0 #fcfcfc;
+
+}
+.popup-box img{/* height:330px; width:500px; */height:100%; width: 100%;}
+.original-box:hover {
+	overflow:visible;
+	cursor:pointer;
+}
+.original-box:hover .popup-box {
+	/* top:25px; */
+	opacity:1;
+	filter:Alpha(opacity=100);
+}
+.popup-box-left {
+	left:0px;
+}
+.original-box:hover .popup-box-left {
+	/* left:25px;left: -65%; */
+	
+}
+.for_block {
+    background: none repeat scroll 0 0 #fff;
+    height: auto;
+   /* min-width: 400px;  min-height: 300px;*/
+    padding: 30px;
+    text-align: center;
+}
+/*.product-view .add-to-cart-buttons .button { width:25% !important;}
+.product-view .add-to-cart-buttons{ float:none !important; }*/
+/* #sizechartlightbox{ height:100%;}
+#sizechartlightbox img{ height:100%; width:100%;} */
+@media only screen and (max-width: 1080px) {
+#content{ position:relative; /*height:96% !important;*/ overflow:scroll; max-height:400px;}
+#modal {left: 36% !important; }
+}
+@media only screen and (max-width: 800px) {
+#modal {left: 40% !important; }
+.close > img{width: 8% !important;}
+#content{ position:relative; /*height:96% !important;*/ overflow:scroll; max-height:400px;}
+}
+@media only screen and (max-width: 768px) {
+.original-box:hover .popup-box-left {
+	/* left:25px; */
+	left: -3%;
+}
+#modal
+{
+	position:fixed !important; 
+	left: 50% !important;
+	height:auto !important;
+	 
+	
+}
+#content{ position:relative; /*height:96% !important;*/ overflow:scroll; max-height:350px;}
+}
+@media only screen and (max-width: 767px) {
+         
+	#modal {
+		width:95%;
+		/* height:156px; */
+		padding:8px;
+		position:relative;
+		margin-left:-45% !important;
+		margin-top:-78px;
+		 
+	} 
+	#heading {
+		width:284px;
+		height:28px;
+		line-height:28px;
+		font-size:0.688em;
+		
+	}
+	#content { 
+		/* width:284px; */
+	 	overflow:scroll;
+		max-height:350px;
+   	} 
+}
+@media only screen and (max-width: 600px) {
+#modal {left: 60% !important; width: 70%; position:fixed !important; }
+.close > img { width: 9% !important;  margin-left: 90% !important; }
+ #content > img {  }
+ #content { 
+		/* width:284px; */
+	 	overflow:scroll !important;
+		max-height:300px;
+   	}
+#sizechartlightbox{ height:100%;}
+#sizechartlightbox img{ height:100%; width:100%;} 
+}
+
+ @media only screen and (max-width: 480px) {
+.close > img { width: 10% !important; margin-bottom: -8% !important;}
+} 
+ 
+@media only screen and (max-width: 360px) {
+#content {max-height: 200px;}
+}
+ 
+@media only screen and (max-width: 360px) {
+.close > img { width:12% !important;}
+}
+@media only screen and (max-width:320px) {
+.close > img { width: 14% !important;}
+.popup-box{ height: 220px;}
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {  
+/* CSS Statements that only apply on webkit-based browsers (Chrome, Safari, etc.) */  
+  .modalclose a img{ height:15% !important;}  
+}
+@media only screen and (max-width:800px) {
+
+.popup-box{ height:auto;  box-shadow:none !important}
+.popup-box div.for_block{margin-top:0px; margin-bottom:20px; padding:0 !important; border:10px solid rgba(130,130,130,0.9) !important;border-top:10px solid rgba(130,130,130,0.9) !important;}
+.popup-box.popup-box-left > img{border:10px solid rgba(130,130,130,0.9) ;}
+#content{max-height:300px;}	 
+
+}
+ /* #modal{ height:auto !important; max-height:70% !important;}  */

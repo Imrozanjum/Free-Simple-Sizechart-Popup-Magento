@@ -1,0 +1,72 @@
+<?php
+/**
+* 
+* Do not edit or add to this file if you wish to upgrade the module to newer
+* versions in the future. If you wish to customize the module for your 
+* needs please contact us to http://mambaweb.weebly.com/contact.html
+* 
+* @category    Ecommerce
+* @package     Mambaweb_SimpleSizechartpopup
+* @copyright   Copyright (c) 2016 Mambaweb
+* @url	       http://goworktoupwork.com/category/downloads/magento-extensions/
+*
+*
+*
+*/
+?>
+<?php
+$helper = Mage::helper('simplesizechartpopup/data');
+
+if($helper->isEnabled()) :
+
+if($helper->canRun()):
+$linktitle = $this->getChartLink();
+$chartSource = $this->getChartSource();
+if (isset($chartSource) && ($chartSource!=''))
+{
+$effect =$helper->getEffect();
+if($effect == 1)
+{  echo $linktitle; ?> 
+	<div id="sizechartlightbox" style="display:none">						 
+		<?php echo $chartSource; ?>
+	</div>
+	<script type="text/javascript">
+        jQuery.noConflict();
+		jQuery(document).ready(function() {
+			
+			jQuery('.fancybox').hover(function(){
+				jQuery('.fancybox').trigger( "click" );
+			},function(){}); 
+			
+			jQuery('.fancybox').fancybox();	
+			
+
+		});
+		
+    </script>
+<?php
+}
+else
+{  echo $linktitle; ?>
+		<div id="sizechartlightbox" style="display:none">
+			<?php echo $chartSource; ?>
+		</div>
+      
+	<script type="text/javascript">
+        jQuery.noConflict();
+		jQuery(document).ready(function() {
+			jQuery('.fancybox').fancybox();	
+		});
+		
+    </script>
+
+	<?php
+	} 
+}
+else return false;
+	else:
+		echo $helper->getMessage();
+	endif;
+	
+	endif;
+?>

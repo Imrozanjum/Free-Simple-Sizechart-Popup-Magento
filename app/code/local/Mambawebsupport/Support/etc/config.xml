@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+* 
+* Do not edit or add to this file if you wish to upgrade the module to newer
+* versions in the future. If you wish to customize the module for your 
+* needs please contact us to http://mambaweb.weebly.com/contact.html
+* 
+* @category    Ecommerce
+* @package     Mambawebsupport_Support
+* @copyright   Copyright (c) 2016 Mambaweb
+* @url	       http://www.mambawebsupport.com/
+*
+**/
+-->
+<config>
+    <modules>
+        <Mambawebsupport_Support>
+            <version>1.0.0</version>
+        </Mambawebsupport_Support>
+    </modules>
+    <admin>
+        <routers>
+			<support>
+				<use>admin</use>
+				<args>
+					<module>Mambawebsupport_Support</module>
+					<frontName>support</frontName>
+				</args>
+			</support>
+        </routers>
+    </admin>
+    <adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <support translate="title" module="support">
+                                            <title>Mambaweb Support and Feedback</title>
+                                        </support>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<support>
+					<file>support.xml</file>
+				</support>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <blocks>
+            <support>
+                <class>Mambawebsupport_Support_Block</class>
+            </support>
+        </blocks>
+        <helpers>
+            <support>
+                <class>Mambawebsupport_Support_Helper</class>
+            </support>
+        </helpers>
+    </global>
+</config>

@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<!--
+/**
+* 
+* Do not edit or add to this file if you wish to upgrade the module to newer
+* versions in the future. If you wish to customize the module for your 
+* needs please contact us to http://mambaweb.weebly.com/contact.html
+* 
+* @category    Ecommerce
+* @package     Mambaweb_SimpleSizechartpopup
+* @copyright   Copyright (c) 2016 Mambaweb
+* @url	       http://goworktoupwork.com/category/downloads/magento-extensions/
+*
+*
+*
+*/
+-->
+<config>
+    <modules>
+        <Mambaweb_SimpleSizechartpopup>
+            <version>1.0.0</version>
+			<name>Simple Size Chart Popup</name>
+			<url> http://goworktoupwork.com/category/downloads/magento-extensions/</url>
+        </Mambaweb_SimpleSizechartpopup>
+    </modules>
+    <frontend>
+        <routers>
+            <simplesizechartpopup>
+                <use>standard</use>
+                <args>
+                    <module>Mambaweb_SimpleSizechartpopup</module>
+                    <frontName>simplesizechartpopup</frontName>
+                </args>
+            </simplesizechartpopup>
+        </routers>
+        <layout>
+            <updates>
+                <simplesizechartpopup>
+                    <file>simplesizechartpopup.xml</file>
+                </simplesizechartpopup>
+            </updates>
+        </layout>
+    </frontend>
+   <!-- <admin>
+        <routers>
+			<simplesizechartpopup>
+				<use>admin</use>
+				<args>
+					<module>Mambaweb_SimpleSizechartpopup</module>
+					<frontName>simplesizechartpopup</frontName>
+				</args>
+			</simplesizechartpopup>
+        </routers>
+    </admin>-->
+	
+	<admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Mambaweb_SimpleSizechartpopup before="Mage_Adminhtml">Mambaweb_SimpleSizechartpopup_Adminhtml</Mambaweb_SimpleSizechartpopup>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+	</admin>
+    <adminhtml>
+		
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<simplesizechartpopup translate="title">
+											<title>Simple Size Chart Popup</title>
+										</simplesizechartpopup>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<simplesizechartpopup>
+					<file>simplesizechartpopup.xml</file>
+				</simplesizechartpopup>
+				<basket>
+     <file>sizechart.xml</file>
+    </basket>
+			</updates>
+		</layout>
+		<translate>
+            <modules>
+                <simplesizechartpopup>
+                    <files>
+                        <default>Mambaweb_SimpleSizechartpopup.csv</default>
+                    </files>
+                </simplesizechartpopup>
+            </modules>
+        </translate>
+    </adminhtml>   
+    <global>
+        <models>
+            <simplesizechartpopup>
+                <class>Mambaweb_SimpleSizechartpopup_Model</class>
+                <resourceModel>simplesizechartpopup_mysql4</resourceModel>
+            </simplesizechartpopup>
+            <simplesizechartpopup_mysql4>
+                <class>Mambaweb_SimpleSizechartpopup_Model_Mysql4</class>
+                <entities>
+                    <simplesizechartpopup>
+                        <table>simplesizechartpopup</table>
+                    </simplesizechartpopup>
+					<product>
+                        <table>simplesizechartpopup_product</table>
+                    </product>
+                </entities>
+            </simplesizechartpopup_mysql4>
+        </models>
+		
+        <resources>
+            <simplesizechartpopup_setup>
+                <setup>
+                    <module>Mambaweb_SimpleSizechartpopup</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </simplesizechartpopup_setup>
+            <simplesizechartpopup_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </simplesizechartpopup_write>
+            <simplesizechartpopup_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </simplesizechartpopup_read>
+        </resources>
+        <blocks>
+            <simplesizechartpopup>
+                <class>Mambaweb_SimpleSizechartpopup_Block</class>
+            </simplesizechartpopup>
+        </blocks>
+        <helpers>
+            <simplesizechartpopup>
+                <class>Mambaweb_SimpleSizechartpopup_Helper</class>
+            </simplesizechartpopup>
+        </helpers>
+    </global>
+	<default>
+		 <simplesizechartpopup>
+		 	<license_status_group>
+				<status>0</status>
+			</license_status_group>
+         	<general_setting>
+				<chart_link>1</chart_link>
+				<linktitle>Click for Size Guide</linktitle>
+				<scptextcolor>FF248A</scptextcolor>
+				<effect>2</effect>
+			</general_setting> 
+         </simplesizechartpopup>
+	</default>
+</config>
